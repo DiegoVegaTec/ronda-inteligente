@@ -1,3 +1,5 @@
+// Actualización del archivo registro.js para el proyecto
+
 // Obtener el historial de rondas del localStorage
 function cargarRegistro() {
     const historial = JSON.parse(localStorage.getItem("historial_rondas")) || [];
@@ -21,6 +23,11 @@ function cargarRegistro() {
 // Exportar la tabla a Excel
 function exportarExcel() {
     const historial = JSON.parse(localStorage.getItem("historial_rondas")) || [];
+    if (historial.length === 0) {
+        alert("No hay datos para exportar.");
+        return;
+    }
+
     let csvContent = "data:text/csv;charset=utf-8,Fecha,Hora,Zona\n";
 
     historial.forEach((ronda) => {
