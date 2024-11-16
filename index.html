@@ -27,5 +27,24 @@
   </nav>
 </body>
  <script src="js/main.js"></script>
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCncx8Xi1u1bBTmRcf8t6kLyb5eAuI3TVI",
+    authDomain: "ronda-inteligente.firebaseapp.com",
+    projectId: "ronda-inteligente",
+    storageBucket: "ronda-inteligente.firebasestorage.app",
+    messagingSenderId: "151154056379",
+    appId: "1:151154056379:web:4d42783b837113c1e59d9e",
+    measurementId: "G-HTBPR6DEX9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+</script>
 
 </html>
